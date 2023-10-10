@@ -1,0 +1,26 @@
+{{- if or (eq (toString .Values.superServer.enabled) "true") (eq (toString .Values.management.enabled) "true") }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: irismplb
+  namespace: {{ .Release.Name }}
+  annotations: 
+    sds/load-ports-as-separate-services: "true"
+spec:
+  selector:
+    intersystems.com/component: data
+    intersystems.com/kind: IrisCluster
+    intersystems.com/role: iris
+  ports:
+    {{- if eq (toString .Values.superServer.enabled) "true" }}
+    - name: super-server
+      port: {{ .Values.superServer.port }}
+      targetPort: 1972
+    {{- end }}
+    {{- if eq (toString .Values.management.enabled) "true" }}
+    - name: management
+      port: {{ .Values.management.port }}
+      targetPort: 52773
+    {{- end }}
+  type: LoadBalancer
+{{- end }}

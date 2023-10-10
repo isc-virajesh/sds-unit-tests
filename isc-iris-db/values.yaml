@@ -1,0 +1,57 @@
+# Used to specify where the deployment is being done
+cloudProvider: "dev"
+cloudProviderRegion: "dev"
+skaffold: false
+
+compute:
+  database:
+    nodeTypeSelector: ""
+    cpu: 2
+    memory: 2Gi
+
+storageDB: 
+  size : 50Gi
+  storageClass : ssd-storageclass-1
+storageWIJ: 
+  size: 25Gi
+  storageClass : ssd-storageclass-1
+storageJournal1: 
+  size: 50Gi
+  storageClass : ssd-storageclass-1
+storageJournal2: 
+  size: 3Gi
+  storageClass : ssd-storageclass-1
+
+mirrored: false
+image:
+  registry: containers.intersystems.com/iscinternal/sds
+  repository: isc-iris-db
+  # As of 4/18/23, IRIS DB is set to be built with base_iris image
+  # containers.intersystems.com/iscinternal/sds/base_iris:1.20.0.2
+  # which uses IRIS 2022.3.0.606 => compatibilityVersion = "2022.3.0".
+  ikoCompatibilityVersion: "2022.3.0"
+
+superServer:
+  enabled: true
+  hostname: "localhost"
+  port: "10000"
+
+management:
+  enabled: true
+  hostname: "localhost"
+  port: "10001"
+
+managementWebGateway:
+  enabled: true
+  hostname: "localhost"
+  port: "10002"
+
+# These are the secret fields needed to successfully deploy.
+# They will be injected by the control plane:
+requiredSecrets:
+  irisLicense: ""
+  intersystemsContainerRegistrySecret: ""
+
+# This is used to set the passwordHash field in the configmap. IKO will then use this to deploy our service with this password
+irisSuperUserPasswordHash: "43109382d758c01728262a29e2ae0791ba6ebc44029edebfccef32e7591f8586461b8a44d60b21c395bf2c3b5e852fb7f3652b0a2446d24a619185dc0faa9ba8,9bea618fe60deb635ac62cb8c78bced0cf0b35ec13c953072e89e2809083cffa93a9b624f2ea384fe32036f2e193ab7a0423d61631cee01a18adb129bc33f3e9,10000,SHA512"
+webgatewayPasswordBase64: "PBKDF2|SHA512|10000|/W/OkvErmA4GDvIeXBIoGMt9aMS7cBzQKOGCp3Boc9oqzL572hRLcND3RnoQ+//jZG6EWs+EYrc3dZXo21nzzA==|YyIQwZVBuDsDIiIVp+CKjI7dbdmS5ZW2n44ElQUH0I+IZPQ9dc0tTf0dmEKbLfMm9wMNfY1O3d1yfn7VBtqMow=="
