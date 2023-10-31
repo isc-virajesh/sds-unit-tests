@@ -1,5 +1,5 @@
 apiVersion: v2
-name: isc-iris-db
+name: sds-unittest-mrdm-codetable
 description: Use this service to securely store your solution's tables. This service collaborates with many other services as either a destination for data or a source of data. A Kafka Connector Service for instance, can only be deployed if attached to an IRIS database.  
 
 # A chart can be either an 'application' or a 'library' chart.

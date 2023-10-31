@@ -25,7 +25,7 @@ storageJournal2:
 mirrored: false
 image:
   registry: containers.intersystems.com/iscinternal/sds
-  repository: isc-iris-db
+  repository: sds-unittest-mrdm-codetable
   # As of 4/18/23, IRIS DB is set to be built with base_iris image
   # containers.intersystems.com/iscinternal/sds/base_iris:1.20.0.2
   # which uses IRIS 2022.3.0.606 => compatibilityVersion = "2022.3.0".
