@@ -7,7 +7,7 @@ entries:
       intersystems/sds-title: InterSystems IRIS Database
     apiVersion: v2
     appVersion: 1.6.6
-    created: "2023-10-31T17:58:36.440946-04:00"
+    created: "2023-10-31T17:59:20.283476-04:00"
     description: Use this service to securely store your solution's tables. This service
       collaborates with many other services as either a destination for data or a
       source of data. A Kafka Connector Service for instance, can only be deployed
@@ -20,24 +20,6 @@ entries:
     urls:
     - https://isc-virajesh.github.io/sds-unit-tests/isc-iris-db-1.6.6.tgz
     version: 1.6.6
-  - annotations:
-      intersystems/sds-category: unittest,database
-      intersystems/sds-organization: InterSystems Corporation
-      intersystems/sds-title: InterSystems IRIS MRDM UnitTest
-    apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-10-31T17:58:36.440041-04:00"
-    description: Use this service to securely store your solution's tables. This service
-      collaborates with many other services as either a destination for data or a
-      source of data. A Kafka Connector Service for instance, can only be deployed
-      if attached to an IRIS database.
-    digest: 505bf519fade8ec69d66cec0463f9c1c2b34e383f443477ff79b4c946fe4a125
-    icon: https://isc-virajesh.github.io/sds-unit-tests/sds-unittest-mrdm-codetable/icon.png
-    name: isc-iris-db
-    type: application
-    urls:
-    - https://isc-virajesh.github.io/sds-unit-tests/isc-iris-db-1.0.0.tgz
-    version: 1.0.0
   sds-unittest-mrdm-codetable:
   - annotations:
       intersystems/sds-category: unittest,database
@@ -45,16 +27,16 @@ entries:
       intersystems/sds-title: InterSystems IRIS MRDM UnitTest
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-10-31T17:58:36.441613-04:00"
+    created: "2023-10-31T17:59:20.285187-04:00"
     description: Use this service to securely store your solution's tables. This service
       collaborates with many other services as either a destination for data or a
       source of data. A Kafka Connector Service for instance, can only be deployed
       if attached to an IRIS database.
-    digest: b808f925c14782efe6ec38e87ef28deaa464118e495f5e7a8550cea59194ca6e
+    digest: 1d4319e9b0c51b051ff3105c447b5d18029374e9b2be534cb9baf9eda745295c
     icon: https://isc-virajesh.github.io/sds-unit-tests/sds-unittest-mrdm-codetable/icon.png
     name: sds-unittest-mrdm-codetable
     type: application
     urls:
     - https://isc-virajesh.github.io/sds-unit-tests/sds-unittest-mrdm-codetable-1.0.0.tgz
     version: 1.0.0
-generated: "2023-10-31T17:58:36.437675-04:00"
+generated: "2023-10-31T17:59:20.281567-04:00"
