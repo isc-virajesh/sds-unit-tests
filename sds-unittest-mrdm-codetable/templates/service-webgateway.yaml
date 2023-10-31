@@ -1,0 +1,19 @@
+{{- if eq (toString .Values.managementWebGateway.enabled) "true" }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: webgatewaysvc
+  namespace: {{ .Release.Name }}
+  annotations: 
+    sds/load-ports-as-separate-services: "true"
+spec:
+  selector:
+    intersystems.com/component: webgateway
+    intersystems.com/kind: IrisCluster
+    intersystems.com/role: webgateway
+  ports:
+    - name:  management-webgateway
+      port: {{ .Values.managementWebGateway.port }}
+      targetPort: 80
+  type: LoadBalancer
+{{- end }}
