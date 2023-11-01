@@ -98,6 +98,7 @@ spec:
         #; To support other applications, please add them to this list.
         - /csp/sys
         - /csp/broker
+        - /csp/sds
         - /api
         - /isc
         - /oauth2
